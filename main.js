@@ -7,7 +7,9 @@ const locationInput = document.querySelector("#location");
 submitBTN.addEventListener("click", function(event){
     event.preventDefault();
     const location = locationInput.value;
-    const url = "api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt={cnt}&appid={API key}";
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`;
+    // This should be much closer to getting this to work for you.  The api key is returning unauthorized so double check what's going on here
+    // I would also check out the units parameter with this api and you don't have to do the conversions below!
 
 
     fetch(url)
